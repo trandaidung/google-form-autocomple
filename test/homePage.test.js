@@ -21,7 +21,7 @@ process.on('unhandledRejection', () => {});
             });
 
             afterEach (async () => {
-                // await page.quit();
+                await page.quit();
             });
 
             it ('find the input box and google search button', async () => {
@@ -241,8 +241,8 @@ process.on('unhandledRejection', () => {});
                     10: 0.25,
                     11: 0.25
                 });
-                // expect(result.inputEnabled).to.equal(true);
-                // expect(result.buttonText).to.include('Google');
+
+                await page.submit()
             });
 
             // it ('put keyword in search box and click search button', async () => {
