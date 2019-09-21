@@ -21,10 +21,10 @@ process.on('unhandledRejection', () => {});
             });
 
             afterEach (async () => {
-                await page.quit();
+                // await page.quit();
             });
 
-            it ('find the input box and google search button', async () => {
+            const test = async () => {
                 const q1 = await page.selectOptionP1({
                     0: 0,
                     1: 1
@@ -242,8 +242,14 @@ process.on('unhandledRejection', () => {});
                     11: 0.25
                 });
 
-                await page.submit()
-            });
+                // await page.submit()
+            }
+
+            for (let i = 1; i <= 3; i++ ) {
+                it ('find the input box and google search button', async () => {
+                    await test()
+                });
+            }
 
             // it ('put keyword in search box and click search button', async () => {
             //     const result = await page.submitKeywordAndGetResult();
